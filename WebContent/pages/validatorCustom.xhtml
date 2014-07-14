@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Validator Custom</title>
+</head>
+<h:body>
+	<h3>Validator Custom</h3>
+	<h:form>
+		<table>
+			<tr>
+				<td><h:outputLabel for="primary_email" value="Primary Email: "></h:outputLabel></td>
+				<td><h:inputText label="Primary Email"
+						value="#{validatorCustomBeanAndAction.primaryEmail}" id="primary_email"
+						required="true">
+						<f:validator validatorId="emailValidator"/>
+					</h:inputText> <h:message for="primary_email" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="secondry_email" value="Secondry Email: "></h:outputLabel></td>
+				<td><h:inputText label="Secondry Email"
+						value="#{validatorCustomBeanAndAction.seconfryEmail}" id="secondry_email"
+						required="true" validator="#{validatorCustomBeanAndAction.validateEmailFromBean}">
+					
+					</h:inputText> <h:message for="secondry_email" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><h:commandButton value="Submit"
+						action="#{validatorCustomBeanAndAction.submit}"></h:commandButton></td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

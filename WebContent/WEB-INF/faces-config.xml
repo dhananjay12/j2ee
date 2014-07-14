@@ -8,4 +8,8 @@
     <phase-listener>mynotes.jsf.util.LifeCycleListener</phase-listener>
 </lifecycle> -->
 
+<application>
+<message-bundle>mynotes.jsf.properties.ValidatorProperteis</message-bundle>
+</application>
+
 </faces-config>

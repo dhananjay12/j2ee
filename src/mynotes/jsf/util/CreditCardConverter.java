@@ -8,8 +8,8 @@ import javax.faces.convert.FacesConverter;
 @FacesConverter("ccno")
 public class CreditCardConverter implements Converter {
 
-	@Override
-	public Object getAsObject(FacesContext context, UIComponent component,String value) {
+	public Object getAsObject(FacesContext context, UIComponent component,
+			String value) {
 		System.out.println("Inside getAsObject");
 		System.out.println("Inside getAsObject value=>" + value);
 		if (value == null) {
@@ -21,14 +21,14 @@ public class CreditCardConverter implements Converter {
 		return value.replaceAll("-", "").trim();
 	}
 
-	@Override
-	public String getAsString(FacesContext context, UIComponent component,Object value) {
+	public String getAsString(FacesContext context, UIComponent component,
+			Object value) {
 		System.out.println("Inside getAsString");
 		if (value == null) {
 			return null;
 		}
 		System.out.println("Inside getAsString value=>" + value.toString());
-		
+
 		String ccno = value.toString();
 		StringBuffer formattedBuffer = new StringBuffer();
 		String part1 = ccno.substring(0, 4);
