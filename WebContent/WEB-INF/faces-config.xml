@@ -4,9 +4,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
-<!-- <lifecycle>
+<lifecycle>
     <phase-listener>mynotes.jsf.util.LifeCycleListener</phase-listener>
-</lifecycle> -->
+</lifecycle>
 
 <application>
 <message-bundle>mynotes.jsf.properties.ValidatorProperteis</message-bundle>
