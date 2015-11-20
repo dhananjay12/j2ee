@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Validator Declarative</title>
+</head>
+<h:body>
+	<h3>Validator Declarative</h3>
+	<h:form>
+		<table>
+			<tr>
+				<td><h:outputLabel for="id" value="Name: "></h:outputLabel></td>
+				<td><h:inputText label="Name"
+						value="#{validatorDeclarativeBeanAndAction.name}" id="name"
+						required="true">
+						<!--  <f:validateBean disabled="true" /> -->
+					</h:inputText> <h:message for="name" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="age" value="Age: "></h:outputLabel></td>
+				<td><h:inputText label="Age"
+						value="#{validatorDeclarativeBeanAndAction.age}" id="age"
+						required="true">
+						<f:validateLongRange minimum="18" maximum="50" />
+					</h:inputText> <h:message for="age" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><h:commandButton value="Submit"
+						action="#{validatorDeclarativeBeanAndAction.submit}"></h:commandButton></td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

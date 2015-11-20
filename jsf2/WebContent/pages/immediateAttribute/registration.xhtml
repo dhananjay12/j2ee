@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Immediate Attribute</title>
+</head>
+<h:body>
+	<h3>Immediate Attribute Registration Page</h3>
+	<h:form>
+		<table>
+			<tr>
+				<td><h:outputLabel for="name" value="Name: "></h:outputLabel></td>
+				<td><h:inputText value="#{registrationImmediateAttrForm.name}"
+						id="name" label="Name" required="true" immediate="true">
+					<f:validator validatorId="dummyValidator" />
+					</h:inputText> <h:message for="name"></h:message></td>
+				
+			</tr>
+			<tr>
+				<td><h:commandButton value="Cancel"
+						action="#{registrationImmediateAttrAction.cancel}" immediate="true"
+						></h:commandButton></td>
+				<td><h:commandButton value="Register"
+						action="#{registrationImmediateAttrAction.register}"></h:commandButton></td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

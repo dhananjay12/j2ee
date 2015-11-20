@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Converter Basic</title>
+</head>
+<h:body>
+	<h3>Converter Page</h3>
+	<h:form>
+		<h3>Date Converter</h3>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="age" value="Age: "></h:outputLabel>
+			<h:inputText value="#{convertorBasicForm.age}" id="age"></h:inputText>
+			<h:outputLabel for="date1" value="Todays Date 1: "></h:outputLabel>
+			<h:outputText value="#{convertorBasicForm.date1}" id="date1">
+				<f:convertDateTime type="date" dateStyle="full" />
+			</h:outputText>
+			<h:outputLabel for="date2" value="Todays Date 2: "></h:outputLabel>
+			<h:outputText value="#{convertorBasicForm.date2}" id="date2">
+				<f:convertDateTime pattern="EEEEEEEE, MMM dd, yyyy" />
+			</h:outputText>
+			<h:outputLabel for="date3" value="Todays Date 3 Esp: "></h:outputLabel>
+			<h:outputText value="#{convertorBasicForm.date3}" id="date3">
+				<f:convertDateTime dateStyle="full" locale="es" timeStyle="long"
+					type="both" />
+			</h:outputText>
+			<h:outputLabel for="date4"
+				value="Enter a date in dd/mm/yyyy format: "></h:outputLabel>
+			<h:inputText id="date4" required="true"
+				requiredmessage="Please enter a date !!!"
+				value="#{convertorBasicForm.date4}">
+				<f:convertDateTime pattern="dd/MM/yyyy" type="date">
+				</f:convertDateTime>
+			</h:inputText>
+			<h:message for="date4" style="color: red; font-weight: bold;"></h:message>
+			<h:commandButton value="Submit"
+				action="#{converterBasicAction.submit}"></h:commandButton>
+
+		</h:panelGrid>
+
+		<h3>Number Converter</h3>
+		<table border="1" cellspacing="2" cellpadding="2">
+			<tr>
+				<th>Parameter</th>
+				<th>Value Passed</th>
+				<th>Output</th>
+			</tr>
+			<tr>
+				<td>maxFractionDigits="2"</td>
+				<td>100.12345</td>
+				<td><h:outputText value="100.12345">
+						<f:convertNumber maxFractionDigits="2"  />
+					</h:outputText></td>
+			</tr>
+			<tr>
+				<td>pattern="##,###.##"</td>
+				<td>1000.12345</td>
+				<td><h:outputText value="1000.12345">
+						<f:convertNumber pattern="##,###.##" />
+					</h:outputText></td>
+			</tr>
+			<tr>
+				<td>locale France from Form</td>
+				<td>value from form 32112323.132</td>
+				<td><h:outputText value="#{convertorBasicForm.bigdecimal}">
+						<f:convertNumber type="currency" locale="#{convertorBasicForm.locale}"/>
+					</h:outputText></td>
+			</tr>
+		</table>
+
+
+
+
+	</h:form>
+</h:body>
+</html>
