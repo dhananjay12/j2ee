@@ -4,6 +4,6 @@
 <title>Hello</title>
 </head>
 <body>
-	<h1>${greeting}</h1>
+	<h1>Registration Success</h1>
 </body>
 </html>
