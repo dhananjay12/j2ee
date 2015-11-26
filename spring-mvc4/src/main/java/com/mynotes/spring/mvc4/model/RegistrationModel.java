@@ -1,10 +1,24 @@
 package com.mynotes.spring.mvc4.model;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import com.mynotes.spring.mvc4.utils.Phone;
+
 public class RegistrationModel {
 
+	@Size(min=2, max=30)
 	private String fname;
+
+	@Size(min=2, max=30)
 	private String lname;
+	
+	@NotEmpty @Email
 	private String email;
+	
+	@NotEmpty @Phone
 	private String phone;
 
 	public String getFname() {
