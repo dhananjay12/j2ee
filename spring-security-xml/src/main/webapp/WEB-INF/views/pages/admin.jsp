@@ -1,0 +1,1 @@
+<h2 class="text-center">Admin Page</h2>
