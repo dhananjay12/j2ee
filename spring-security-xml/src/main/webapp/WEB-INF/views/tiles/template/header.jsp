@@ -13,7 +13,11 @@
                 <li><a href="/spring-security-xml/home">Home</a></li>
                 <li><a href="/spring-security-xml/products">Products</a></li>
                 <li><a href="/spring-security-xml/admin" data-toggle="modal">Admin</a></li>
+               
             </ul>
         </div>
     </div>
 </div>
+<form id="logout-form" action="/spring-security-xml/logout" method="post">
+								<input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
+</form>

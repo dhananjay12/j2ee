@@ -66,6 +66,11 @@
 			<version>${springsecurity-version}</version>
 		</dependency>
 		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-taglibs</artifactId>
+		    <version>${springsecurity-version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-api</artifactId>
 			<version>${tiles-version}</version>

@@ -25,4 +25,9 @@ public class AppController {
     public String contactUs(ModelMap model) {
         return "admin";
     }
+    
+    @RequestMapping(value = { "/login"}, method = RequestMethod.GET)
+    public String viewLogin(ModelMap model) {
+        return "login";
+    }
 }

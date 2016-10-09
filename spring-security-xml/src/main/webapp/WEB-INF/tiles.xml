@@ -30,6 +30,12 @@
 		<put-attribute name="title" value="Administration" />
 		<put-attribute name="body" value="/WEB-INF/views/pages/admin.jsp" />
 	</definition>
+	
+	<!-- Login Page -->
+	<definition name="login" extends="base.definition">
+		<put-attribute name="title" value="Sign In" />
+		<put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />
+	</definition>
 
 
 
